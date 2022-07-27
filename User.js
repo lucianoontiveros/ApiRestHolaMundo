@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema;
 
-const users = mongoose.model('User', {
+const esquema = new Schema({
         name: { type: String, required: true, minLength: 3},
-        lastname: { type: String, required: true, minLength: 3}
-})
+        lastname: { type: String, required: true, minLength: 3},
+      });
 
-module.exports = users 
+const users = mongoose.model('users', esquema)
+module.exports = users
